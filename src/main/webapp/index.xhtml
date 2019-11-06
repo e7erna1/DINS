@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui" xml:lang="en"
+      lang="en">
+
+<h:head>
+    <title>Title</title>
+    <style type="text/css">
+        .error {
+            color: red
+        }
+    </style>
+</h:head>
+<h:body>
+    Insert
+    <h:form>
+        Name: <h:inputText id="fristName"
+                           value="#{addition.name}"
+                           required="true"
+                           requiredMessage="#{'You need to enter this field!'}"/>
+        <h:message for="fristName" styleClass="error"/>
+        <br/><br/>
+        Surname: <h:inputText id="surname"
+                              value="#{addition.surname}"
+                              required="true"
+                              requiredMessage="#{'You need to enter this field!'}"/>
+        <h:message for="surname" styleClass="error"/>
+        <br/><br/>
+        Birthday: <h:inputText id="birthday"
+                               value="#{addition.birthday}"
+                               required="true"
+                               requiredMessage="#{'You need to enter this field!'}">
+        <f:convertDateTime pattern="dd/MM/yyyy"/>
+    </h:inputText>
+        <h:message for="birthday" styleClass="error"/>
+
+        <br/><br/>
+        Address: <h:inputText id="address"
+                              value="#{addition.address}"
+                              required="true"
+                              requiredMessage="#{'You need to enter this field!'}"/>
+        <h:message for="address" styleClass="error"/>
+        <br/><br/>
+        <h:commandButton value="Add"
+                         action="#{addition.addPerson(addition.name, addition.surname, addition.birthday,addition.address)}"/>
+    </h:form>
+    <br/><br/><br/>
+
+    Edit
+    <h:form>
+        Name: <p:inputText id="name" value="#{edition.value}"/>
+        <p:commandButton value="Find"
+                         action="#{edition.Find(edition.value)}"
+                         update="eTable"/>
+        <p:commandButton value="Update"
+                         action="#{edition.Update}"/>
+        <p:commandButton value="Clear"
+                         action="#{edition.linkedList.clear}" update="eTable"/><br/>
+        <p:dataTable id="eTable" value="#{edition.linkedList}" var="persons">
+            <p:column><f:facet name="header">Name</f:facet><p:inputText
+                    value="${persons.name}"/></p:column>
+            <p:column><f:facet name="header">Surname</f:facet><p:inputText
+                    value="${persons.serName}"/></p:column>
+            <p:column><f:facet name="header">Burthday</f:facet><p:outputLabel
+                    value="${persons.date}"/></p:column>
+            <p:column><f:facet name="header">Address</f:facet><p:inputText
+                    value="${persons.address}"/></p:column>
+        </p:dataTable>
+    </h:form>
+    <br/><br/><br/>
+
+    Delete
+    <h:form>
+        Name: <p:inputText id="dName" value="${deletion.name}"/>
+        <p:commandButton value="Find" action="#{deletion.getPeron(deletion.name)}"
+                         update="tableDelete"/>
+        <p:commandButton value="Clear"
+                         action="#{deletion.linkedList.clear}" update="tableDelete"/><br/>
+        <p:dataTable id="tableDelete" value="#{deletion.linkedList}" var="persons">
+            <p:column><f:facet name="header">Name</f:facet><p:outputLabel value="${persons.name}"/></p:column>
+            <p:column><f:facet name="header">Surname</f:facet><p:outputLabel
+                    value="${persons.serName}"/></p:column>
+            <p:column><f:facet name="header">Burthday</f:facet><p:outputLabel
+                    value="${persons.date}"/></p:column>
+            <p:column><f:facet name="header">Address</f:facet><p:outputLabel
+                    value="${persons.address}"/></p:column>
+            <p:column><f:facet name="header">Delete</f:facet><p:commandButton value="Delete"
+                                                                              action="#{deletion.deletePerson(persons)}"
+                                                                              update="tableDelete"/></p:column>
+        </p:dataTable>
+    </h:form>
+    <br/><br/><br/>
+
+    Get by value
+    <h:form>
+        <h:selectOneListbox id="select" value="#{getting.select}">
+            <f:selectItem itemValue="Name" itemLabel="Name"/>
+            <f:selectItem itemValue="Surname" itemLabel="Surname"/>
+            <f:selectItem itemValue="Address" itemLabel="Address"/>
+        </h:selectOneListbox>
+        Value: <p:inputText id="vaiue" value="#{getting.value}"/>
+        <p:commandButton value="Find"
+                         action="#{getting.getPeron(getting.getPeron(getting.select))}"
+                         update="table"/>
+        <p:commandButton value="Clear"
+                         action="#{getting.linkedList.clear}" update="table"/><br/>
+        <p:dataTable id="table" value="#{getting.linkedList}" var="persons">
+            <p:column><f:facet name="header">Name</f:facet><p:outputLabel value="${persons.name}"/></p:column>
+            <p:column><f:facet name="header">Surname</f:facet><p:outputLabel
+                    value="${persons.serName}"/></p:column>
+            <p:column><f:facet name="header">Burthday</f:facet><p:outputLabel
+                    value="${persons.date}"/></p:column>
+            <p:column><f:facet name="header">Address</f:facet><p:outputLabel
+                    value="${persons.address}"/></p:column>
+        </p:dataTable>
+    </h:form>
+    <br/><br/><br/>
+
+    Get All
+    <h:form>
+        <p:commandButton value="Find"
+                         action="#{gettingAll.getAllPerson()}"
+                         update="tableAll"/>
+        <p:commandButton value="Clear"
+                         action="#{gettingAll.linkedList.clear}" update="tableAll"/><br/>
+        <p:dataTable id="tableAll" value="#{gettingAll.linkedList}" var="persons">
+            <p:column><f:facet name="header">Name</f:facet><p:outputLabel value="${persons.name}"/></p:column>
+            <p:column><f:facet name="header">Surname</f:facet><p:outputLabel
+                    value="${persons.serName}"/></p:column>
+            <p:column><f:facet name="header">Burthday</f:facet><p:outputLabel
+                    value="${persons.date}"/></p:column>
+            <p:column><f:facet name="header">Address</f:facet><p:outputLabel
+                    value="${persons.address}"/></p:column>
+        </p:dataTable>
+    </h:form>
+</h:body>
+</html>

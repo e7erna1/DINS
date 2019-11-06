@@ -1,0 +1,2 @@
+#!/bin/bash
+cat backup.sql | docker exec -i 7d8274b2ba84 psql -U admin -d person

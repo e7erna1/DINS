@@ -1,0 +1,27 @@
+version: "3"
+services:
+  db:
+    build: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: admin
+      POSTGRES_DB: person
+    container_name: database
+    ports:
+      - 8081:5432
+  tomcat:
+    build:
+      context: .
+      dockerfile: tomcat/Dockerfile
+    restart: always
+    working_dir: /usr/local/tomcat
+    command: catalina.sh run
+    container_name: tomcat
+    ports:
+      - 8080:8080
+    links:
+      - db
+
+volumes:
+  database: {}
