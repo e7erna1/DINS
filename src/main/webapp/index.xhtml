@@ -64,8 +64,9 @@
                     value="${persons.name}"/></p:column>
             <p:column><f:facet name="header">Surname</f:facet><p:inputText
                     value="${persons.serName}"/></p:column>
-            <p:column><f:facet name="header">Burthday</f:facet><p:outputLabel
-                    value="${persons.date}"/></p:column>
+            <p:column><f:facet name="header">Birthday</f:facet><p:outputLabel
+                    value="${persons.date}"><f:convertDateTime
+                    pattern="dd.MM.yyyy"/></p:outputLabel></p:column>
             <p:column><f:facet name="header">Address</f:facet><p:inputText
                     value="${persons.address}"/></p:column>
         </p:dataTable>
@@ -83,8 +84,9 @@
             <p:column><f:facet name="header">Name</f:facet><p:outputLabel value="${persons.name}"/></p:column>
             <p:column><f:facet name="header">Surname</f:facet><p:outputLabel
                     value="${persons.serName}"/></p:column>
-            <p:column><f:facet name="header">Burthday</f:facet><p:outputLabel
-                    value="${persons.date}"/></p:column>
+            <p:column><f:facet name="header">Birthday</f:facet><p:outputLabel
+                    value="${persons.date}"><f:convertDateTime
+                    pattern="dd.MM.yyyy"/></p:outputLabel></p:column>
             <p:column><f:facet name="header">Address</f:facet><p:outputLabel
                     value="${persons.address}"/></p:column>
             <p:column><f:facet name="header">Delete</f:facet><p:commandButton value="Delete"
@@ -111,15 +113,16 @@
             <p:column><f:facet name="header">Name</f:facet><p:outputLabel value="${persons.name}"/></p:column>
             <p:column><f:facet name="header">Surname</f:facet><p:outputLabel
                     value="${persons.serName}"/></p:column>
-            <p:column><f:facet name="header">Burthday</f:facet><p:outputLabel
-                    value="${persons.date}"/></p:column>
+            <p:column><f:facet name="header">Birthday</f:facet><p:outputLabel
+                    value="${persons.date}"><f:convertDateTime
+                    pattern="dd.MM.yyyy"/></p:outputLabel></p:column>
             <p:column><f:facet name="header">Address</f:facet><p:outputLabel
                     value="${persons.address}"/></p:column>
         </p:dataTable>
     </h:form>
     <br/><br/><br/>
 
-    Get All
+    Get all
     <h:form>
         <p:commandButton value="Find"
                          action="#{gettingAll.getAllPerson()}"
@@ -130,8 +133,11 @@
             <p:column><f:facet name="header">Name</f:facet><p:outputLabel value="${persons.name}"/></p:column>
             <p:column><f:facet name="header">Surname</f:facet><p:outputLabel
                     value="${persons.serName}"/></p:column>
-            <p:column><f:facet name="header">Burthday</f:facet><p:outputLabel
-                    value="${persons.date}"/></p:column>
+
+            <p:column><f:facet name="header">Birthday</f:facet><p:outputLabel
+                    value="${persons.date}"><f:convertDateTime
+                    pattern="dd.MM.yyyy"/></p:outputLabel></p:column>
+
             <p:column><f:facet name="header">Address</f:facet><p:outputLabel
                     value="${persons.address}"/></p:column>
         </p:dataTable>
