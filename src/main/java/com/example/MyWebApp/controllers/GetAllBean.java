@@ -19,8 +19,8 @@ public class GetAllBean {
   private List<Persons> linkedList;
 
   /**
-     * FacesContext gets context for this request, which will treatment. PersonManagementDAO gets
-     * instance to interact with the database then get all persons from database. isValidationFailed
+   * FacesContext gets context for this request, which will treatment. PersonManagementDAO gets
+   * instance to interact with the database then get all persons from database. isValidationFailed
    * return true if everything ok.
    */
 

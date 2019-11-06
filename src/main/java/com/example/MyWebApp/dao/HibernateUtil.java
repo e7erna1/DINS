@@ -21,8 +21,8 @@ class HibernateUtil {
   private static SessionFactory sessionFactory;
 
   /**
-   * Check if our session factory already exist.
-   * If it exist, return it, else create new;
+   * Check if our session factory already exist. If it exist, return it, else create new;
+   *
    * @return Ready for use session factory.
    */
 

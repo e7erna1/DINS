@@ -23,9 +23,10 @@ public class AddBean implements Serializable {
   private String address;
 
   /**
-   * FacesContext gets context for this request, which will treatment.
-   * PersonManagementDAO gets instance to interact with the database then it adds new person.
-   * isValidationFailed return true if everything ok.
+   * FacesContext gets context for this request, which will treatment. PersonManagementDAO gets
+   * instance to interact with the database then it adds new person. isValidationFailed return true
+   * if everything ok.
+   *
    * @param name - name of person
    * @param surname - surname of person
    * @param birthday - birthday of person

@@ -21,8 +21,8 @@ public class EditBean {
   private String value;
 
   /**
-   * FacesContext gets context for this request, which will treatment.
-   * PersonManagementDAO gets instance to interact with the database then get list of person with introduced person's name.
+   * FacesContext gets context for this request, which will treatment. PersonManagementDAO gets
+   * instance to interact with the database then get list of person with introduced person's name.
    * isValidationFailed return true if everything ok.
    *
    * @param value -
