@@ -46,12 +46,16 @@ In the browser, open the following URL: http://localhost:8080/DINS/index.xhtml
 
 Press button add
 ### Edit user
-Enter name and press "Find"
+Enter name and press "Find".
+
 You can change any of the fields except birthday, just change to a new value and click "Update".
+
 After clicking the "clear" button, the table is cleared.
 ### Delete user
-Enter name and press "Find"
+Enter name and press "Find".
+
 For the person you are interested in, click "Delete".
+
 After clicking the "clear" button, the table is cleared.
 ### Get by value
 You should choose one of the items by which the program will search for a user for you.
@@ -62,8 +66,9 @@ You should choose one of the items by which the program will search for a user f
 | Surname     |
 | Address     |
 
-Enter a value in the Value field and press "Find"
-After clicking the "clear" button, the table is cleared.
+Enter a value in the Value field and press "Find".
+
+After clicking the "Сlear" button, the table is cleared.
 ### Get all
 By clicking on the button "Find" displays all users.
 
