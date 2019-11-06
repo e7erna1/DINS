@@ -36,6 +36,13 @@ A person has the following characteristics:
   * To exit the application, use the keyboard shortcut Ctrl + C
 # Working with application
 In the browser, open the following URL: http://localhost:8080/DINS/index.xhtml
+### Default
+By default, the application has the following values:
+
+|Name|Surname|Birthday  |Address|
+|----|-------|----------|-------|
+|Name|Surname|11.01.2019|Address|
+
 ### Add user
 |Field name  |  Example      |Format                        |
 |------------|---------------|------------------------------|
