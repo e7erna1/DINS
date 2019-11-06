@@ -11,14 +11,26 @@ Download, build and run application in docker:
 * Download
   * Create a folder on your computer.
   * In this folder, open command line and run the command:
-  ```bash git clone https://github.com/iCode002/DINS.git ```
+    ```bash 
+    git clone https://github.com/iCode002/DINS.git 
+    ```
 * Build
   * Enter the following commands in the command line:
-    * ```bash gradle cleaar ```
-    * ```bash gradle build ```
-    * ```bash gradle war ```
+    * ```bash 
+      gradle cleaar
+      ```
+    * ```bash 
+      gradle build 
+      ```
+    * ```bash 
+      gradle war 
+      ```
   * Enter the following commands in the command line:
-    * ```bash docker-compose build ```
+    * ```bash 
+      docker-compose build 
+      ```
 * Run
   * Enter the following commands in the command line:
-    * ```bash docker-compose up ```
+    * ```bash 
+      docker-compose up 
+      ```
