@@ -1,3 +1,0 @@
-#!/bin/bash
-rm backup.sql
-docker exec -t 7d8274b2ba84 pg_dumpall -c -U admin > backup.sql
