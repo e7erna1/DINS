@@ -16,7 +16,7 @@ A person has the following characteristics:
 * Build
   * Enter the following commands in the command line:
     * ```bash 
-      gradle cleaar
+      gradle clear
       ```
     * ```bash 
       gradle build 
